@@ -2,7 +2,7 @@ define(function(require) {
 
   var Adapt = require('coreJS/adapt');
   var Backbone = require('backbone');
-  var myNotesView = require('extensions/adapt-sideView/js/adapt-sideView-view');
+  var sideviewView = require('extensions/adapt-sideView/js/adapt-sideView-view');
   // var copyNotes = require('extensions/adapt-myNotes/js/copyToNotes');
 
   Adapt.once('app:dataReady', function() {
@@ -10,14 +10,16 @@ define(function(require) {
       createIframeHolder();
   });
 
-  Adapt.once('adapt:start', function() {
-    console.log('adapt:start');
-      Adapt.trigger("sideView:ready");
-  });
-
   Adapt.on('adapt:start', function() {
     console.log('adapt:start');
       Adapt.trigger("sideView:ready");
+      new sideviewView({
+        model: new Backbone.Model()
+      });
+  });
+
+  $(document).on('click', '.moodle-close-button', function() {
+    Adapt.trigger("sideView:close");
   });
 
   function createIframeHolder() {
