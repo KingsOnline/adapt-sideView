@@ -2,21 +2,6 @@
   float: right;
 }
 
-.copy-box {
-  position: absolute;
-  display: none;
-
-  .copy-box-button {
-    padding: 40px;
-    background-color: @primary-color;
-    color: @primary-color-inverted;
-
-    .icon {
-      color: @primary-color-inverted;
-    }
-  }
-}
-
 .moodle-view {
   z-index: 1000;
   display: -webkit-box;
@@ -82,39 +67,10 @@
     flex: 1;
     background: white;
 
-    .newNote-button,
-    .postNote-button {
-      height: 64px;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-
-    .newNote,
-    .notesManager {
-      height: 100%;
-      width: 100%;
-
-      iframe {
-        height: 100%;
-        width: 100%;
-      }
-
-      &.hidden {
-        display: none;
-      }
-    }
-
     &.loading-iframe {
       background-image: url("assets/ajax-loader.gif");
       background-repeat: no-repeat;
       background-position: center;
-
-      .notesManager-iframe,
-      .notesManager-iframe {
-        display: none;
-      }
     }
   }
 }

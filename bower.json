@@ -7,7 +7,7 @@
   "displayName": "My Notes",
   "extension": "myNotes",
   "description": "",
-  "main": "/js/adapt-myNotes.js",
+  "main": "/js/adapt-sideView.js",
   "keywords": [
     "adapt-plugin",
     "adapt-extension"
