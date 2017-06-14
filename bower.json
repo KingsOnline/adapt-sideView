@@ -1,0 +1,17 @@
+{
+  "name": "adapt-myNotes",
+  "version": "0.0.1",
+  "framework": "^2.0.0",
+  "homepage": "https://github.com/kingsonline/adapt-myNotes",
+  "issues": "https://github.com/kingsonline/adapt-moodle/issues",
+  "displayName": "My Notes",
+  "extension": "myNotes",
+  "description": "",
+  "main": "/js/adapt-myNotes.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPLv3",
+  "targetAttribute": "_myNotes"
+}
