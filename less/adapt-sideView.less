@@ -2,7 +2,7 @@
   float: right;
 }
 
-.moodle-view {
+.sideview {
   z-index: 1000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10,12 +10,12 @@
   display: flex;
   flex-direction: column;
 
-  .moodle-iframe-holder button,
+  .sideview-iframe-holder button,
   div {
     min-width: 200px;
   }
 
-  .moodle-close-button {
+  .sideview-controls-close-button {
     position: absolute;
     width: 60px;
     color: @navigation-icon-color;
@@ -30,26 +30,26 @@
   }
 
   &.close {
-    .moodle-close-button {
+    .sideview-controls-close-button {
       right: -400px;
       .transition-time(.8s);
     }
   }
 
   &.open {
-    .moodle-close-button {
+    .sideview-controls-close-button {
       right: 0;
       .transition-time(.8s);
     }
   }
 
-  .iframe-controls-bar {
-    height: 60px;
+  .sideview-controls {
+    height: 64px;
     background-color: @navigation-color;
 
   }
 
-  .iframe-controls-title {
+  .sideview-controls-title {
     position: absolute;
     color: @navigation-icon-color;
     font-family: @font-family;
@@ -57,7 +57,7 @@
     top: 17px;
   }
 
-  .moodle-iframe-holder {
+  .sideview-iframe-holder {
     width: 100%;
     flex: 1;
     -webkit-box-flex: 1;
@@ -74,14 +74,14 @@
     }
   }
 }
-//desktop side-by-side. Bigger than iPad
+//desktop side-by-side. iPad and bigger
 @media (min-width: 1023px) {
-  .moodle-view {
+  .sideview {
     top: 0;
     height: 100%;
     position: fixed;
     .transition-time(1s);
-    border-left: 1px solid @secondary-color;
+    border-left: 1px solid @transparency;
 
     &.close {
       left: 100%;
@@ -93,7 +93,7 @@
       width: 35%;
     }
 
-    .moodle-iframe-holder {
+    .sideview-iframe-holder {
       min-width: 400px;
     }
   }
@@ -120,7 +120,7 @@
 }
 // mobile full screen. Smaller than iPad
 @media (max-width: 1023px) {
-  .moodle-view {
+  .sideview {
     top: 0;
     height: 100%;
     width: 100%;
