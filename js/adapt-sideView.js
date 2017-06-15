@@ -8,12 +8,23 @@ define(function(require) {
   }
 
   Adapt.once('app:dataReady', function() {
-    console.log('app ready notes');
-    createIframeHolder();
+    if (Adapt.course.attributes._sideView._isEnabled)
+      createIframeHolder();
   });
 
-  Adapt.on('adapt:start', function() {
-    Adapt.trigger("sideView:ready");
+  Adapt.once('adapt:start', function() {
+    if (Adapt.course.attributes._sideView._isEnabled)
+      Adapt.trigger("sideView:loaded");
+  });
+
+  Adapt.on("pageView:ready", function() {
+    if (Adapt.course.attributes._sideView._isEnabled)
+      Adapt.trigger("sideView:pageReady");
+  });
+
+  Adapt.on("menuView:ready", function() {
+    if (Adapt.course.attributes._sideView._isEnabled)
+      Adapt.trigger("sideView:menuReady");
   });
 
   Adapt.on('sideView:loadIframe', function(iframe, type, url) {
