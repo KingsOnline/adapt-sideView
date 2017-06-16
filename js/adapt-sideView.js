@@ -39,8 +39,7 @@ define(function(require) {
         href: adaptCSS,
         type: "text/css"
       }));
-      document.getElementById(iframe).contentWindow.window.onbeforeunload = null; // prevents error message when leaving moodle page when you haven't submitted.
-      Adapt.trigger('sideView:removeLoading');
+      document.getElementById(iframe + '-iframe').contentWindow.window.onbeforeunload = null; // prevents error message when leaving moodle page when you haven't submitted.
     });
   });
 
@@ -61,10 +60,10 @@ define(function(require) {
   });
 
   Adapt.on('sideView:removeLoading', function(iframe) {
+    console.log('finished loading');
     setTimeout(function() {
-      console.log('finished loading');
       $('.sideview-iframe-holder').removeClass('loading-iframe');
-    }, 500);
+    }, 400);
   });
 
   $(document).on('click', '.sideview-controls-close-button', function() {
