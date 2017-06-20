@@ -52,6 +52,12 @@ define(function(require) {
     });
   });
 
+  Adapt.on('router:page router:menu', function() {
+    console.log("sideView:close");
+    Adapt.trigger('sideView:close');
+  });
+
+
   Adapt.on('sideView:close', function() {
     console.log("sideView:close");
     $('.sideview').removeClass('open').addClass('close');
