@@ -74,7 +74,7 @@
   }
 }
 //desktop side-by-side. iPad and bigger
-@media (min-width: 1023px) {
+@media (min-width: (@device-width-large + 1)) {
   .sideview {
     top: 0;
     height: 100%;
@@ -90,10 +90,6 @@
     &.open {
       left: 65%;
       width: 35%;
-    }
-
-    .sideview-iframe-holder {
-      min-width: 400px;
     }
   }
 
@@ -118,7 +114,7 @@
   }
 }
 // mobile full screen. Smaller than iPad
-@media (max-width: 1023px) {
+@media (max-width: @device-width-large) {
   .sideview {
     top: 0;
     height: 100%;
