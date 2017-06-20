@@ -40,36 +40,34 @@ define(function(require) {
         type: "text/css"
       }));
       document.getElementById(iframe + '-iframe').contentWindow.window.onbeforeunload = null; // prevents error message when leaving moodle page when you haven't submitted.
+      Adapt.trigger('sideView:removeLoading');
     });
   });
 
   Adapt.on('sideView:open', function() {
-    console.log("sideView:open");
     $('body').addClass('moodle-open').removeClass('moodle-close');
     $('.sideview').removeClass('close').addClass('open');
-    $(".sideview-controls-close-button").on("click", function() {
-      Adapt.trigger('sideview:close');
-    });
   });
 
   Adapt.on('router:page router:menu', function() {
-    console.log("sideView:close");
     Adapt.trigger('sideView:close');
   });
 
 
   Adapt.on('sideView:close', function() {
-    console.log("sideView:close");
     $('.sideview').removeClass('open').addClass('close');
     $('body').removeClass('moodle-open').addClass('moodle-close');
     $('.moodle-launch-button.open').removeClass('open');
   });
 
   Adapt.on('sideView:removeLoading', function(iframe) {
-    console.log('finished loading');
     setTimeout(function() {
       $('.sideview-iframe-holder').removeClass('loading-iframe');
     }, 400);
+  });
+
+  $(".sideview-controls-close-button").on("click", function() {
+    Adapt.trigger('sideview:close');
   });
 
   $(document).on('click', '.sideview-controls-close-button', function() {
