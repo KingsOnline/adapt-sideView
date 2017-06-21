@@ -1,7 +1,4 @@
-// to go in blocks.json
-"_moodle": {
-  "_isEnabled": true,
-  "_type": "discussion",
-  "_link": "https://keats.kcl.ac.uk/mod/forum/post.php?reply=209904#mformforum",
-  "buttonLabel": "Comments"
+// course.json
+"_sideView": {
+  "_isEnabled": true
 }
