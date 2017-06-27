@@ -28,7 +28,7 @@ define(function(require) {
   });
 
   Adapt.on('sideView:loadIframe', function(iframe, type, url) {
-    document.getElementById(iframe + '-iframe').src = url;
+    document.getElementById(iframe + '-iframe').contentWindow.location.replace(url);
     $('.sideview-iframe-holder').addClass('loading-iframe');
     $('.' + iframe + '-iframe').on('load', function() {
       var adaptCSS = location.protocol + '//' + location.host + location.pathname;
