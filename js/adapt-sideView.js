@@ -2,19 +2,18 @@ define(function(require) {
 
   var Adapt = require('coreJS/adapt');
 
-  function createIframeHolder() {
-    $('body').append("<div class='sideview close'><div class='sideview-controls'><div class='sideview-controls-title' /><button class='sideview-controls-close-button icon icon-cross'></button></div><div class='sideview-iframe-holder' /></div>");
-    $('body').addClass('moodle-close');
-  }
+    var IntroView = Backbone.View.extend({
+      initialize: function() {
+        var template = Handlebars.templates.sideView;
+        $('body').addClass('moodle-close');
+        $('html').find('body').append(template());
+        Adapt.trigger("sideView:loaded");
+      },
+    });
 
   Adapt.once('app:dataReady', function() {
     if (Adapt.course.attributes._sideView._isEnabled)
-      createIframeHolder();
-  });
-
-  Adapt.once('adapt:start', function() {
-    if (Adapt.course.attributes._sideView._isEnabled)
-      Adapt.trigger("sideView:loaded");
+      new IntroView({});
   });
 
   Adapt.on("pageView:ready", function() {
@@ -33,7 +32,7 @@ define(function(require) {
     $('.' + iframe + '-iframe').on('load', function() {
       var adaptCSS = location.protocol + '//' + location.host + location.pathname;
       adaptCSS = adaptCSS.substring(0, adaptCSS.lastIndexOf('/'));
-      adaptCSS += "/assets/adapt-" + type + ".css"
+      adaptCSS += "/assets/adapt-" + type + ".css";
       $('.' + iframe + '-iframe').contents().find("head").append($("<link/>", {
         rel: "stylesheet",
         href: adaptCSS,
