@@ -1,4 +1,5 @@
 // course.json
 "_sideView": {
-  "_isEnabled": true
+  "_isEnabled": true,
+  "_runNumber": ""
 }
