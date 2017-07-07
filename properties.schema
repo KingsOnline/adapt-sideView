@@ -17,7 +17,7 @@
             "_sideView": {
               "type": "object",
               "required": false,
-              "legend": "My Notes",
+              "legend": "Sideview",
               "properties": {
                 "_isEnabled": {
                   "type": "boolean",
@@ -34,7 +34,7 @@
                     "_isEnabled": {
                       "type": "boolean",
                       "default": true,
-                      "title": "Enable Sideview",
+                      "title": "Enable run number",
                       "help": "WARNING: this will change all the links.",
                       "inputType": "Checkbox"
                     },
