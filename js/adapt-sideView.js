@@ -13,10 +13,10 @@ define(function(require) {
 
       Adapt.trigger("sideView:loaded");
 
-      Adapt.once("pageView:ready menuView:ready", function() {
-        if (model._runNumber != "") {
+      Adapt.once("pageView:preRender menuView:preRender", function() {
+        if (model._run._isEnabled) {
           console.log('trigger');
-          Adapt.trigger("sideView:appendRun", model._runNumber);
+          Adapt.trigger("sideView:appendRun", model._run._routeAddress, model._run._number);
         }
       });
 

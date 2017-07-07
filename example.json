@@ -1,5 +1,9 @@
 // course.json
 "_sideView": {
   "_isEnabled": true,
-  "_runNumber": ""
+  "_run": {
+    "_isEnabled": true,
+    "_number": 1,
+    "_hostName": "myWebite.com"
+  }
 }
