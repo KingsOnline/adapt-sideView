@@ -1,17 +1,17 @@
 {
-  "name": "adapt-myNotes",
-  "version": "0.0.1",
+  "name": "adapt-sideView",
+  "version": "0.1.0",
   "framework": "^2.0.0",
-  "homepage": "https://github.com/kingsonline/adapt-myNotes",
-  "issues": "https://github.com/kingsonline/adapt-moodle/issues",
-  "displayName": "My Notes",
-  "extension": "myNotes",
-  "description": "",
+  "homepage": "https://github.com/kingsonline/adapt-sideView",
+  "issues": "https://github.com/kingsonline/adapt-sideView/issues",
+  "displayName": "Sideview",
+  "extension": "sideView",
+  "description": "Presents iframe content in a sideview. Sideview is populated by other extensions.",
   "main": "/js/adapt-sideView.js",
   "keywords": [
     "adapt-plugin",
     "adapt-extension"
   ],
   "license": "GPLv3",
-  "targetAttribute": "_myNotes"
+  "targetAttribute": "_sideView"
 }

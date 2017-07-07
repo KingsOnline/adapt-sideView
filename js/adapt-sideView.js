@@ -15,7 +15,6 @@ define(function(require) {
 
       Adapt.once("pageView:preRender menuView:preRender", function() {
         if (model._run._isEnabled) {
-          console.log('trigger');
           Adapt.trigger("sideView:appendRun", model._run._routeAddress, model._run._number);
         }
       });
