@@ -6,9 +6,8 @@ define(function(require) {
 
     initialize: function() {
       var template = Handlebars.templates.sideView;
-      $('body').addClass('moodle-close');
+      $('body').addClass('sideview-close');
       $('html').find('body').append(template());
-      console.log(this);
       var model = this.model;
 
       Adapt.trigger("sideView:loaded");
@@ -39,13 +38,13 @@ define(function(require) {
             href: adaptCSS,
             type: "text/css"
           }));
-          document.getElementById(iframe + '-iframe').contentWindow.window.onbeforeunload = null; // prevents error message when leaving moodle page when you haven't submitted.
+          document.getElementById(iframe + '-iframe').contentWindow.window.onbeforeunload = null; // prevents error message when leaving sideview page when you haven't submitted.
           Adapt.trigger('sideView:removeLoading');
         });
       });
 
       Adapt.on('sideView:open', function() {
-        $('body').addClass('moodle-open').removeClass('moodle-close');
+        $('body').addClass('sideview-open').removeClass('sideview-close');
         $('.sideview').removeClass('close').addClass('open');
       });
 
@@ -56,8 +55,7 @@ define(function(require) {
 
       Adapt.on('sideView:close', function() {
         $('.sideview').removeClass('open').addClass('close');
-        $('body').removeClass('moodle-open').addClass('moodle-close');
-        $('.moodle-launch-button.open').removeClass('open');
+        $('body').removeClass('sideview-open').addClass('sideview-close');
       });
 
       Adapt.on('sideView:removeLoading', function(iframe) {
