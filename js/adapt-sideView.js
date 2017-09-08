@@ -49,7 +49,8 @@ define(function(require) {
       });
 
       Adapt.on('router:page router:menu', function() {
-        Adapt.trigger('sideView:close');
+        $('.sideview').removeClass('open').addClass('close');
+        $('body').removeClass('sideview-open').addClass('sideview-close');
       });
 
 
