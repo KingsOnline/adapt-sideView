@@ -65,10 +65,6 @@ define(function(require) {
         }, 400);
       });
 
-      $(".sideview-controls-close-button").on("click", function() {
-        Adapt.trigger('sideview:close');
-      });
-
       $(document).on('click', '.sideview-controls-close-button', function() {
         Adapt.trigger("sideView:close");
       });
