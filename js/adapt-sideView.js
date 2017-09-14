@@ -2,7 +2,7 @@ define(function(require) {
 
   var Adapt = require('coreJS/adapt');
 
-  var IntroView = Backbone.View.extend({
+  var SideView = Backbone.View.extend({
 
     initialize: function() {
       var template = Handlebars.templates.sideView;
@@ -68,13 +68,17 @@ define(function(require) {
       $(document).on('click', '.sideview-controls-close-button', function() {
         Adapt.trigger("sideView:close");
       });
+
     }
+
   });
 
-  Adapt.once('app:dataReady', function() {
+  Adapt.once('adapt:initialize', function() {
+    console.log('sideView preRender');
     if (Adapt.course.get('_sideView')._isEnabled)
-      new IntroView({
+      new SideView({
         model: Adapt.course.get('_sideView')
       });
   });
+  return SideView;
 });
