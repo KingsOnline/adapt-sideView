@@ -73,8 +73,7 @@ define(function(require) {
 
   });
 
-  Adapt.once('adapt:initialize', function() {
-    console.log('sideView preRender');
+  Adapt.once('app:dataReady', function() {
     if (Adapt.course.get('_sideView')._isEnabled)
       new SideView({
         model: Adapt.course.get('_sideView')
