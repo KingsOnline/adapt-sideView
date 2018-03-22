@@ -33,7 +33,7 @@
                   "properties": {
                     "_isEnabled": {
                       "type": "boolean",
-                      "default": true,
+                      "default": false,
                       "title": "Enable run number",
                       "help": "WARNING: this will change all the links.",
                       "inputType": "Checkbox"
@@ -48,8 +48,8 @@
                     "_routeAddress": {
                       "type": "string",
                       "title": "Route address",
-                      "help": "The location of the file that will reroute to your Sideview activities.",
-                      "default": "https://git.iddkingsonline.com/route/index.html#[Course]_[weekNum]_[iLesson]_",
+                      "help": "The location of the web app that will reroute to your Sideview activities.",
+                      "default": "",
                       "inputType": "Text"
                     }
                   }
