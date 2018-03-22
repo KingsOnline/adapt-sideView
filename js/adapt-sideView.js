@@ -74,10 +74,12 @@ define(function(require) {
   });
 
   Adapt.once('app:dataReady', function() {
-    if (Adapt.course.get('_sideView')._isEnabled)
-      new SideView({
-        model: Adapt.course.get('_sideView')
-      });
+    if (!Adapt.course.get('_sideView') || !Adapt.course.get('_sideView')._isEnabled) {
+      return;
+    }
+    new SideView({
+      model: Adapt.course.get('_sideView')
+    });
   });
   return SideView;
 });
