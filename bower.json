@@ -1,7 +1,7 @@
 {
   "name": "adapt-sideView",
-  "version": "0.1.6",
-  "framework": "^2.0.0",
+  "version": "1.4.0",
+  "framework": ">=2.1.0",
   "homepage": "https://github.com/kingsonline/adapt-sideView",
   "issues": "https://github.com/kingsonline/adapt-sideView/issues",
   "displayName": "Sideview",
