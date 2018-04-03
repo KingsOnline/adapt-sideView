@@ -2,7 +2,7 @@
 "_sideView": {
   "_isEnabled": true,
   "_run": {
-    "_isEnabled": true,
+    "_isEnabled": false,
     "_number": 1,
     "_hostName": "myWebite.com"
   }
