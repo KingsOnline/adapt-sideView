@@ -13,9 +13,8 @@ define(function(require) {
       Adapt.trigger("sideView:loaded");
 
       Adapt.once("pageView:preRender menuView:preRender", function() {
-        if (model._run._isEnabled) {
-          Adapt.trigger("sideView:appendRun", model._run._routeAddress, model._run._number);
-        }
+        if (!model._run || !model._run._isEnabled) return;
+        Adapt.trigger("sideView:appendRun", model._run._routeAddress, model._run._number);
       });
 
       Adapt.on("pageView:ready", function() {
