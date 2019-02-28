@@ -38,6 +38,7 @@
   &.open {
     .sideview-controls-close-button {
       right: 0;
+      z-index: 1002;
       .transition-time(.8s);
     }
   }
@@ -46,7 +47,6 @@
     height: 64px;
     background-color: @navigation-color;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    z-index: 1;
   }
 
   .sideview-controls-title {
@@ -55,6 +55,7 @@
     font-family: @font-family;
     left: 42%;
     top: 20px;
+    z-index: 1002;
   }
 
   .sideview-iframe-holder {
