@@ -38,8 +38,8 @@ define(function(require) {
             type: "text/css"
           }));
           document.getElementById(iframe + '-iframe').contentWindow.window.onbeforeunload = null; // prevents error message when leaving sideview page when you haven't submitted.
-          Adapt.trigger('sideView:removeLoading');
         });
+        Adapt.trigger('sideView:removeLoading');
       });
 
       Adapt.on('sideView:open', function() {
